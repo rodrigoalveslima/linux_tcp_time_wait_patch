@@ -1,0 +1,18 @@
+diff -uNr linux-5.4.184.original/include/net/tcp.h linux-5.4.184/include/net/tcp.h
+--- linux-5.4.184.original/include/net/tcp.h	2022-03-15 23:38:03.122887789 +0000
++++ linux-5.4.184/include/net/tcp.h	2022-03-15 23:53:25.832814947 +0000
+@@ -117,11 +117,11 @@
+ 				 * initial RTO.
+ 				 */
+ 
+-#define TCP_TIMEWAIT_LEN (60*HZ) /* how long to wait to destroy TIME-WAIT
+-				  * state, about 60 seconds	*/
++#define TCP_TIMEWAIT_LEN (5*HZ) /* how long to wait to destroy TIME-WAIT
++				  * state, about 5 seconds	*/
+ #define TCP_FIN_TIMEOUT	TCP_TIMEWAIT_LEN
+                                  /* BSD style FIN_WAIT2 deadlock breaker.
+-				  * It used to be 3min, new value is 60sec,
++				  * It used to be 3min, new value is 5sec,
+ 				  * to combine FIN-WAIT-2 timeout with
+ 				  * TIME-WAIT timer.
+ 				  */
